@@ -1,0 +1,13 @@
+services:
+  - type: web
+    runtime: docker
+    name: marketforge-api-d4rl1ng0
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: DATABASE_URL
+        sync: false
